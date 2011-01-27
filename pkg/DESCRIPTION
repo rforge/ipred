@@ -1,7 +1,7 @@
 Package: ipred
 Title: Improved Predictors 
-Version: 0.8-8
-Date: $Date: 2009/09/09 15:40:28 $
+Version: 0.8-9
+Date: 2011-01-27
 Author: Andrea Peters and Torsten Hothorn
 Maintainer: Torsten Hothorn <Torsten.Hothorn@R-project.org>
 Description: Improved predictive models by indirect classification and
