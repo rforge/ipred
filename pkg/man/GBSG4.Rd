@@ -80,5 +80,4 @@ cat("COX integrated: ")
 
 }
 
-}
 \keyword{datasets}
