@@ -77,7 +77,5 @@ S3method(predict, slda)
 importFrom(class, knn)
 importFrom(rpart, rpart, prune)
 importFrom(MASS, lda)
-#import(mlbench)
-### at least is.Surv needs to be imported
 importFrom(survival, Surv, is.Surv)
 importFrom(nnet, multinom)
