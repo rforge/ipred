@@ -9,7 +9,7 @@
 %\VignetteIndexEntry{Some more or less useful examples for illustration.}
 %\VignetteDepends{ipred}
 %\textwidth=6.2in 
-%\VignetteDepends{mvtnorm}
+%\VignetteDepends{mvtnorm,TH.data,rpart,MASS}
 
 \begin{document}
 \title{\ipred: Improved Predictors}
@@ -128,8 +128,10 @@ Referring to the example of glaucoma diagnosis we first
 demonstrate the functionality of the \texttt{bagging} function. 
 We fit \texttt{nbagg = 25} (default) classification trees for bagging by 
 <<bagging,echo=TRUE>>=
-library(ipred)
-data(GlaucomaM)
+library("ipred")
+library("rpart")
+library("MASS")
+data("GlaucomaM", package="TH.data")
 gbag <- bagging(Class ~ ., data = GlaucomaM, coob=TRUE)
 @
 where \texttt{GlaucomaM} contains explanatory HRT variables 
@@ -198,7 +200,7 @@ function and therefore not included in the learning
 sample \texttt{GlaucomaMVF}. We assign the given variables to explanatory 
 and intermediate by specifying the input formula.
 <<indirect.formula, echo=TRUE>>=
-data(GlaucomaMVF)
+data("GlaucomaMVF", package="ipred")
 GlaucomaMVF <- GlaucomaMVF[,-63]
 formula.indirect <- Class~clv + lora + cs ~ .
 @
