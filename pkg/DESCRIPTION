@@ -5,9 +5,9 @@ Date: 2013-09-02
 Authors@R: c(person("Andrea", "Peters", role = "aut"),
              person("Torsten", "Hothorn", role = c("aut", "cre"),
                     email = "Torsten.Hothorn@R-project.org"),
-             person("Brian D.", "Ripley", role = "cph"),
-             person("Terry", "Therneau", role = "cph"), 
-             person("Beth", "Atkinson", role = "cph"))
+             person("Brian D.", "Ripley", role = "ctb"),
+             person("Terry", "Therneau", role = "ctb"), 
+             person("Beth", "Atkinson", role = "ctb"))
 Description: Improved predictive models by indirect classification and
   bagging for classification, regression and survival problems 
   as well as resampling based estimators of prediction error. 
