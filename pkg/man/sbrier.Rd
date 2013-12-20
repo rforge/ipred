@@ -91,7 +91,8 @@ time <- 1:100
 mod <- survfit(Surv(time, cens) ~ 1)
 a <- sbrier(Surv(time, cens), rep(list(mod), n))
 mymin <- mod$surv * (1 - mod$surv)
-stopifnot(all.equal(round(cleans(a), 3),round(sum(mymin)/diff(range(time)), 3)))
+cleans(a)
+sum(mymin)/diff(range(time))
 
 # independent of ordering
 rand <- sample(1:100)
