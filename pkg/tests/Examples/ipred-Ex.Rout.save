@@ -1,6 +1,6 @@
 
-R Under development (unstable) (2017-02-28 r72286) -- "Unsuffered Consequences"
-Copyright (C) 2017 The R Foundation for Statistical Computing
+R version 3.3.2 (2016-10-31) -- "Sincere Pumpkin Patch"
+Copyright (C) 2016 The R Foundation for Statistical Computing
 Platform: x86_64-pc-linux-gnu (64-bit)
 
 R is free software and comes with ABSOLUTELY NO WARRANTY.
@@ -20,18 +20,6 @@ Type 'q()' to quit R.
 > pkgname <- "ipred"
 > source(file.path(R.home("share"), "R", "examples-header.R"))
 > options(warn = 1)
-> base::assign(".ExTimings", "ipred-Ex.timings", pos = 'CheckExEnv')
-> base::cat("name\tuser\tsystem\telapsed\n", file=base::get(".ExTimings", pos = 'CheckExEnv'))
-> base::assign(".format_ptime",
-+ function(x) {
-+   if(!is.na(x[4L])) x[1L] <- x[1L] + x[4L]
-+   if(!is.na(x[5L])) x[2L] <- x[2L] + x[5L]
-+   options(OutDec = '.')
-+   format(x[1L:3L], digits = 7L)
-+ },
-+ pos = 'CheckExEnv')
-> 
-> ### * </HEADER>
 > library('ipred')
 > 
 > base::assign(".oldSearch", base::search(), pos = 'CheckExEnv')
@@ -41,7 +29,6 @@ Type 'q()' to quit R.
 > 
 > flush(stderr()); flush(stdout())
 > 
-> base::assign(".ptime", proc.time(), pos = "CheckExEnv")
 > ### Name: DLBCL
 > ### Title: Diffuse Large B-Cell Lymphoma
 > ### Aliases: DLBCL
@@ -63,8 +50,6 @@ Call: survfit(formula = Surv(time, cens) ~ 1, data = DLBCL)
 > 
 > 
 > 
-> base::assign(".dptime", (proc.time() - get(".ptime", pos = "CheckExEnv")), pos = "CheckExEnv")
-> base::cat("DLBCL", base::get(".format_ptime", pos = 'CheckExEnv')(get(".dptime", pos = "CheckExEnv")), "\n", file=base::get(".ExTimings", pos = 'CheckExEnv'), append=TRUE, sep="\t")
 > cleanEx()
 
 detaching ‘package:survival’
@@ -74,7 +59,6 @@ detaching ‘package:survival’
 > 
 > flush(stderr()); flush(stdout())
 > 
-> base::assign(".ptime", proc.time(), pos = "CheckExEnv")
 > ### Name: GlaucomaMVF
 > ### Title: Glaucoma Database
 > ### Aliases: GlaucomaMVF
@@ -104,15 +88,12 @@ detaching ‘package:survival’
 > 
 > 
 > 
-> base::assign(".dptime", (proc.time() - get(".ptime", pos = "CheckExEnv")), pos = "CheckExEnv")
-> base::cat("GlaucomaMVF", base::get(".format_ptime", pos = 'CheckExEnv')(get(".dptime", pos = "CheckExEnv")), "\n", file=base::get(".ExTimings", pos = 'CheckExEnv'), append=TRUE, sep="\t")
 > cleanEx()
 > nameEx("bagging")
 > ### * bagging
 > 
 > flush(stderr()); flush(stdout())
 > 
-> base::assign(".ptime", proc.time(), pos = "CheckExEnv")
 > ### Name: bagging
 > ### Title: Bagging Classification, Regression and Survival Trees
 > ### Aliases: bagging ipredbagg ipredbagg.factor ipredbagg.integer
@@ -237,8 +218,6 @@ Out-of-bag estimate of Brier's score:  0.2098
 > 
 > 
 > 
-> base::assign(".dptime", (proc.time() - get(".ptime", pos = "CheckExEnv")), pos = "CheckExEnv")
-> base::cat("bagging", base::get(".format_ptime", pos = 'CheckExEnv')(get(".dptime", pos = "CheckExEnv")), "\n", file=base::get(".ExTimings", pos = 'CheckExEnv'), append=TRUE, sep="\t")
 > cleanEx()
 
 detaching ‘package:mlbench’, ‘package:survival’, ‘package:MASS’
@@ -248,7 +227,6 @@ detaching ‘package:mlbench’, ‘package:survival’, ‘package:MASS’
 > 
 > flush(stderr()); flush(stdout())
 > 
-> base::assign(".ptime", proc.time(), pos = "CheckExEnv")
 > ### Name: dystrophy
 > ### Title: Detection of muscular dystrophy carriers.
 > ### Aliases: dystrophy
@@ -267,15 +245,12 @@ detaching ‘package:mlbench’, ‘package:survival’, ‘package:MASS’
 > 
 > 
 > 
-> base::assign(".dptime", (proc.time() - get(".ptime", pos = "CheckExEnv")), pos = "CheckExEnv")
-> base::cat("dystrophy", base::get(".format_ptime", pos = 'CheckExEnv')(get(".dptime", pos = "CheckExEnv")), "\n", file=base::get(".ExTimings", pos = 'CheckExEnv'), append=TRUE, sep="\t")
 > cleanEx()
 > nameEx("errorest")
 > ### * errorest
 > 
 > flush(stderr()); flush(stdout())
 > 
-> base::assign(".ptime", proc.time(), pos = "CheckExEnv")
 > ### Name: errorest
 > ### Title: Estimators of Prediction Error
 > ### Aliases: errorest errorest.data.frame errorest.default
@@ -492,8 +467,6 @@ Brier's score:  0.1927
 > 
 > 
 > 
-> base::assign(".dptime", (proc.time() - get(".ptime", pos = "CheckExEnv")), pos = "CheckExEnv")
-> base::cat("errorest", base::get(".format_ptime", pos = 'CheckExEnv')(get(".dptime", pos = "CheckExEnv")), "\n", file=base::get(".ExTimings", pos = 'CheckExEnv'), append=TRUE, sep="\t")
 > cleanEx()
 
 detaching ‘package:survival’, ‘package:rpart’, ‘package:MASS’
@@ -503,7 +476,6 @@ detaching ‘package:survival’, ‘package:rpart’, ‘package:MASS’
 > 
 > flush(stderr()); flush(stdout())
 > 
-> base::assign(".ptime", proc.time(), pos = "CheckExEnv")
 > ### Name: inbagg
 > ### Title: Indirect Bagging
 > ### Aliases: inbagg inbagg.default inbagg.data.frame
@@ -532,8 +504,6 @@ detaching ‘package:survival’, ‘package:rpart’, ‘package:MASS’
 > 
 > 
 > 
-> base::assign(".dptime", (proc.time() - get(".ptime", pos = "CheckExEnv")), pos = "CheckExEnv")
-> base::cat("inbagg", base::get(".format_ptime", pos = 'CheckExEnv')(get(".dptime", pos = "CheckExEnv")), "\n", file=base::get(".ExTimings", pos = 'CheckExEnv'), append=TRUE, sep="\t")
 > cleanEx()
 
 detaching ‘package:rpart’, ‘package:MASS’
@@ -543,7 +513,6 @@ detaching ‘package:rpart’, ‘package:MASS’
 > 
 > flush(stderr()); flush(stdout())
 > 
-> base::assign(".ptime", proc.time(), pos = "CheckExEnv")
 > ### Name: inclass
 > ### Title: Indirect Classification
 > ### Aliases: inclass inclass.default inclass.data.frame
@@ -580,15 +549,12 @@ detaching ‘package:rpart’, ‘package:MASS’
 > 
 > 
 > 
-> base::assign(".dptime", (proc.time() - get(".ptime", pos = "CheckExEnv")), pos = "CheckExEnv")
-> base::cat("inclass", base::get(".format_ptime", pos = 'CheckExEnv')(get(".dptime", pos = "CheckExEnv")), "\n", file=base::get(".ExTimings", pos = 'CheckExEnv'), append=TRUE, sep="\t")
 > cleanEx()
 > nameEx("ipredknn")
 > ### * ipredknn
 > 
 > flush(stderr()); flush(stdout())
 > 
-> base::assign(".ptime", proc.time(), pos = "CheckExEnv")
 > ### Name: ipredknn
 > ### Title: k-Nearest Neighbour Classification
 > ### Aliases: ipredknn
@@ -619,8 +585,6 @@ Misclassification error:  0.0533
 > 
 > 
 > 
-> base::assign(".dptime", (proc.time() - get(".ptime", pos = "CheckExEnv")), pos = "CheckExEnv")
-> base::cat("ipredknn", base::get(".format_ptime", pos = 'CheckExEnv')(get(".dptime", pos = "CheckExEnv")), "\n", file=base::get(".ExTimings", pos = 'CheckExEnv'), append=TRUE, sep="\t")
 > cleanEx()
 
 detaching ‘package:mlbench’
@@ -630,7 +594,6 @@ detaching ‘package:mlbench’
 > 
 > flush(stderr()); flush(stdout())
 > 
-> base::assign(".ptime", proc.time(), pos = "CheckExEnv")
 > ### Name: kfoldcv
 > ### Title: Subsamples for k-fold Cross-Validation
 > ### Aliases: kfoldcv
@@ -657,15 +620,12 @@ detaching ‘package:mlbench’
 > 
 > 
 > 
-> base::assign(".dptime", (proc.time() - get(".ptime", pos = "CheckExEnv")), pos = "CheckExEnv")
-> base::cat("kfoldcv", base::get(".format_ptime", pos = 'CheckExEnv')(get(".dptime", pos = "CheckExEnv")), "\n", file=base::get(".ExTimings", pos = 'CheckExEnv'), append=TRUE, sep="\t")
 > cleanEx()
 > nameEx("predict.bagging")
 > ### * predict.bagging
 > 
 > flush(stderr()); flush(stdout())
 > 
-> base::assign(".ptime", proc.time(), pos = "CheckExEnv")
 > ### Name: predict.classbagg
 > ### Title: Predictions from Bagging Trees
 > ### Aliases: predict.classbagg predict.regbagg predict.survbagg
@@ -707,15 +667,12 @@ Levels: bad good
 > 
 > 
 > 
-> base::assign(".dptime", (proc.time() - get(".ptime", pos = "CheckExEnv")), pos = "CheckExEnv")
-> base::cat("predict.bagging", base::get(".format_ptime", pos = 'CheckExEnv')(get(".dptime", pos = "CheckExEnv")), "\n", file=base::get(".ExTimings", pos = 'CheckExEnv'), append=TRUE, sep="\t")
 > cleanEx()
 > nameEx("predict.inbagg")
 > ### * predict.inbagg
 > 
 > flush(stderr()); flush(stdout())
 > 
-> base::assign(".ptime", proc.time(), pos = "CheckExEnv")
 > ### Name: predict.inbagg
 > ### Title: Predictions from an Inbagg Object
 > ### Aliases: predict.inbagg
@@ -748,8 +705,6 @@ Levels: 1 2
 > 
 > 
 > 
-> base::assign(".dptime", (proc.time() - get(".ptime", pos = "CheckExEnv")), pos = "CheckExEnv")
-> base::cat("predict.inbagg", base::get(".format_ptime", pos = 'CheckExEnv')(get(".dptime", pos = "CheckExEnv")), "\n", file=base::get(".ExTimings", pos = 'CheckExEnv'), append=TRUE, sep="\t")
 > cleanEx()
 
 detaching ‘package:rpart’, ‘package:MASS’
@@ -759,7 +714,6 @@ detaching ‘package:rpart’, ‘package:MASS’
 > 
 > flush(stderr()); flush(stdout())
 > 
-> base::assign(".ptime", proc.time(), pos = "CheckExEnv")
 > ### Name: predict.inclass
 > ### Title: Predictions from an Inclass Object
 > ### Aliases: predict.inclass
@@ -869,8 +823,6 @@ Levels: glaucoma normal
 > 
 > 
 > 
-> base::assign(".dptime", (proc.time() - get(".ptime", pos = "CheckExEnv")), pos = "CheckExEnv")
-> base::cat("predict.inclass", base::get(".format_ptime", pos = 'CheckExEnv')(get(".dptime", pos = "CheckExEnv")), "\n", file=base::get(".ExTimings", pos = 'CheckExEnv'), append=TRUE, sep="\t")
 > cleanEx()
 
 detaching ‘package:rpart’
@@ -880,7 +832,6 @@ detaching ‘package:rpart’
 > 
 > flush(stderr()); flush(stdout())
 > 
-> base::assign(".ptime", proc.time(), pos = "CheckExEnv")
 > ### Name: prune.classbagg
 > ### Title: Pruning for Bagging
 > ### Aliases: prune.classbagg prune.regbagg prune.survbagg
@@ -908,8 +859,6 @@ Out-of-bag estimate of misclassification error:  0.285
 > 
 > 
 > 
-> base::assign(".dptime", (proc.time() - get(".ptime", pos = "CheckExEnv")), pos = "CheckExEnv")
-> base::cat("prune.bagging", base::get(".format_ptime", pos = 'CheckExEnv')(get(".dptime", pos = "CheckExEnv")), "\n", file=base::get(".ExTimings", pos = 'CheckExEnv'), append=TRUE, sep="\t")
 > cleanEx()
 
 detaching ‘package:rpart’
@@ -919,7 +868,6 @@ detaching ‘package:rpart’
 > 
 > flush(stderr()); flush(stdout())
 > 
-> base::assign(".ptime", proc.time(), pos = "CheckExEnv")
 > ### Name: rsurv
 > ### Title: Simulate Survival Data
 > ### Aliases: rsurv
@@ -948,8 +896,6 @@ n= 500, number of events= 500
 > 
 > 
 > 
-> base::assign(".dptime", (proc.time() - get(".ptime", pos = "CheckExEnv")), pos = "CheckExEnv")
-> base::cat("rsurv", base::get(".format_ptime", pos = 'CheckExEnv')(get(".dptime", pos = "CheckExEnv")), "\n", file=base::get(".ExTimings", pos = 'CheckExEnv'), append=TRUE, sep="\t")
 > cleanEx()
 
 detaching ‘package:survival’
@@ -959,7 +905,6 @@ detaching ‘package:survival’
 > 
 > flush(stderr()); flush(stdout())
 > 
-> base::assign(".ptime", proc.time(), pos = "CheckExEnv")
 > ### Name: sbrier
 > ### Title: Model Fit for Survival Data
 > ### Aliases: sbrier
@@ -1167,8 +1112,6 @@ attr(,"time")
 > 
 > 
 > 
-> base::assign(".dptime", (proc.time() - get(".ptime", pos = "CheckExEnv")), pos = "CheckExEnv")
-> base::cat("sbrier", base::get(".format_ptime", pos = 'CheckExEnv')(get(".dptime", pos = "CheckExEnv")), "\n", file=base::get(".ExTimings", pos = 'CheckExEnv'), append=TRUE, sep="\t")
 > cleanEx()
 
 detaching ‘package:survival’
@@ -1178,7 +1121,6 @@ detaching ‘package:survival’
 > 
 > flush(stderr()); flush(stdout())
 > 
-> base::assign(".ptime", proc.time(), pos = "CheckExEnv")
 > ### Name: slda
 > ### Title: Stabilised Linear Discriminant Analysis
 > ### Aliases: slda slda.default slda.formula slda.factor
@@ -1203,8 +1145,6 @@ detaching ‘package:survival’
 > 
 > 
 > 
-> base::assign(".dptime", (proc.time() - get(".ptime", pos = "CheckExEnv")), pos = "CheckExEnv")
-> base::cat("slda", base::get(".format_ptime", pos = 'CheckExEnv')(get(".dptime", pos = "CheckExEnv")), "\n", file=base::get(".ExTimings", pos = 'CheckExEnv'), append=TRUE, sep="\t")
 > cleanEx()
 
 detaching ‘package:MASS’, ‘package:mlbench’
@@ -1214,7 +1154,6 @@ detaching ‘package:MASS’, ‘package:mlbench’
 > 
 > flush(stderr()); flush(stdout())
 > 
-> base::assign(".ptime", proc.time(), pos = "CheckExEnv")
 > ### Name: varset
 > ### Title: Simulation Model
 > ### Aliases: varset
@@ -1232,14 +1171,12 @@ detaching ‘package:MASS’, ‘package:mlbench’
 > 
 > 
 > 
-> base::assign(".dptime", (proc.time() - get(".ptime", pos = "CheckExEnv")), pos = "CheckExEnv")
-> base::cat("varset", base::get(".format_ptime", pos = 'CheckExEnv')(get(".dptime", pos = "CheckExEnv")), "\n", file=base::get(".ExTimings", pos = 'CheckExEnv'), append=TRUE, sep="\t")
 > graphics::par(get("par.postscript", pos = 'CheckExEnv'))
 > ### * <FOOTER>
 > ###
 > options(digits = 7L)
 > base::cat("Time elapsed: ", proc.time() - base::get("ptime", pos = 'CheckExEnv'),"\n")
-Time elapsed:  20.276 0.232 20.608 0 0 
+Time elapsed:  4.548 0.04 4.606 0 0 
 > grDevices::dev.off()
 null device 
           1 
