@@ -1,6 +1,6 @@
 
-R version 3.3.2 (2016-10-31) -- "Sincere Pumpkin Patch"
-Copyright (C) 2016 The R Foundation for Statistical Computing
+R version 3.5.1 (2018-07-02) -- "Feather Spray"
+Copyright (C) 2018 The R Foundation for Statistical Computing
 Platform: x86_64-pc-linux-gnu (64-bit)
 
 R is free software and comes with ABSOLUTELY NO WARRANTY.
@@ -23,6 +23,7 @@ Type 'q()' to quit R.
 > library('ipred')
 > 
 > base::assign(".oldSearch", base::search(), pos = 'CheckExEnv')
+> base::assign(".old_wd", base::getwd(), pos = 'CheckExEnv')
 > cleanEx()
 > nameEx("DLBCL")
 > ### * DLBCL
@@ -446,6 +447,13 @@ Root mean squared error:  5.877
 > 
 > data("GBSG2", package = "TH.data")
 > library("survival")
+
+Attaching package: ‘survival’
+
+The following object is masked from ‘package:rpart’:
+
+    solder
+
 > 
 > # prediction is fitted Kaplan-Meier
 > predict.survfit <- function(object, newdata) object
@@ -890,7 +898,7 @@ X3 -0.2103    0.8104   0.1525 -1.38   0.168
 X4  0.0466    1.0477   0.1488  0.31   0.754
 X5  0.2709    1.3111   0.1536  1.76   0.078
 
-Likelihood ratio test=289  on 5 df, p=0
+Likelihood ratio test=289  on 5 df, p=<2e-16
 n= 500, number of events= 500 
 > 
 > 
@@ -1174,9 +1182,10 @@ detaching ‘package:MASS’, ‘package:mlbench’
 > graphics::par(get("par.postscript", pos = 'CheckExEnv'))
 > ### * <FOOTER>
 > ###
+> cleanEx()
 > options(digits = 7L)
 > base::cat("Time elapsed: ", proc.time() - base::get("ptime", pos = 'CheckExEnv'),"\n")
-Time elapsed:  4.548 0.04 4.606 0 0 
+Time elapsed:  4.672 0.116 4.786 0 0 
 > grDevices::dev.off()
 null device 
           1 
