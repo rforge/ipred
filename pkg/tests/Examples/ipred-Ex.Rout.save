@@ -1,5 +1,5 @@
 
-R version 3.5.1 (2018-07-02) -- "Feather Spray"
+R Under development (unstable) (2018-11-02 r75540) -- "Unsuffered Consequences"
 Copyright (C) 2018 The R Foundation for Statistical Computing
 Platform: x86_64-pc-linux-gnu (64-bit)
 
@@ -891,14 +891,14 @@ detaching ‘package:rpart’
 Call:
 coxph(formula = Surv(time, cens) ~ ., data = simdat)
 
-      coef exp(coef) se(coef)     z       p
-X1  3.1555   23.4648   0.2023 15.60 < 2e-16
-X2  1.1015    3.0086   0.1628  6.77 1.3e-11
-X3 -0.2103    0.8104   0.1525 -1.38   0.168
-X4  0.0466    1.0477   0.1488  0.31   0.754
-X5  0.2709    1.3111   0.1536  1.76   0.078
+       coef exp(coef) se(coef)      z        p
+X1  3.15550  23.46481  0.20230 15.598  < 2e-16
+X2  1.10149   3.00864  0.16275  6.768 1.31e-11
+X3 -0.21028   0.81036  0.15251 -1.379   0.1680
+X4  0.04661   1.04771  0.14877  0.313   0.7541
+X5  0.27090   1.31114  0.15363  1.763   0.0778
 
-Likelihood ratio test=289  on 5 df, p=<2e-16
+Likelihood ratio test=289  on 5 df, p=< 2.2e-16
 n= 500, number of events= 500 
 > 
 > 
@@ -1185,7 +1185,7 @@ detaching ‘package:MASS’, ‘package:mlbench’
 > cleanEx()
 > options(digits = 7L)
 > base::cat("Time elapsed: ", proc.time() - base::get("ptime", pos = 'CheckExEnv'),"\n")
-Time elapsed:  4.672 0.116 4.786 0 0 
+Time elapsed:  7.648 0.128 7.849 0 0 
 > grDevices::dev.off()
 null device 
           1 
