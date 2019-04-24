@@ -3,6 +3,8 @@ library("mlbench")
 library("MASS")
 library("survival")
 
+suppressWarnings(RNGversion("3.5.3"))
+
 actversion <- paste(R.version$major, R.version$minor, sep=".")
 thisversion <- "1.7.0"
 

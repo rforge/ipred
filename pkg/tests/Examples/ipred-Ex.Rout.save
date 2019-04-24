@@ -1,6 +1,6 @@
 
-R Under development (unstable) (2018-11-02 r75540) -- "Unsuffered Consequences"
-Copyright (C) 2018 The R Foundation for Statistical Computing
+R version 3.5.3 (2019-03-11) -- "Great Truth"
+Copyright (C) 2019 The R Foundation for Statistical Computing
 Platform: x86_64-pc-linux-gnu (64-bit)
 
 R is free software and comes with ABSOLUTELY NO WARRANTY.
@@ -38,6 +38,7 @@ Type 'q()' to quit R.
 > ### ** Examples
 > 
 > 
+> suppressWarnings(RNGversion("3.5.3"))
 > set.seed(290875)
 > 
 > data("DLBCL", package="ipred")
@@ -1185,7 +1186,7 @@ detaching ‘package:MASS’, ‘package:mlbench’
 > cleanEx()
 > options(digits = 7L)
 > base::cat("Time elapsed: ", proc.time() - base::get("ptime", pos = 'CheckExEnv'),"\n")
-Time elapsed:  7.648 0.128 7.849 0 0 
+Time elapsed:  4.108 0.069 4.176 0 0 
 > grDevices::dev.off()
 null device 
           1 

@@ -1,5 +1,6 @@
 
 library(ipred)
+suppressWarnings(RNGversion("3.5.3"))
 
 # check if SdiffKM computes
 # 

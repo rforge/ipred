@@ -47,6 +47,7 @@ Radespiel-Troeger (2004), Bagging Survival Trees.
 }
 \examples{
 
+suppressWarnings(RNGversion("3.5.3"))
 set.seed(290875)
 
 data("DLBCL", package="ipred")
