@@ -1,5 +1,5 @@
 
-R version 3.5.3 (2019-03-11) -- "Great Truth"
+R Under development (unstable) (2019-04-24 r76421) -- "Unsuffered Consequences"
 Copyright (C) 2019 The R Foundation for Statistical Computing
 Platform: x86_64-pc-linux-gnu (64-bit)
 
@@ -142,7 +142,7 @@ Bagging classification trees with 25 bootstrap replications
 
 Call: bagging.data.frame(formula = Class ~ ., data = Ionosphere, coob = TRUE)
 
-Out-of-bag estimate of misclassification error:  0.0912 
+Out-of-bag estimate of misclassification error:  0.0969 
 
 > 
 > # Double-Bagging: combine LDA and classification trees
@@ -176,7 +176,7 @@ Bagging regression trees with 25 bootstrap replications
 Call: bagging.data.frame(formula = medv ~ ., data = BostonHousing, 
     coob = TRUE)
 
-Out-of-bag estimate of root mean squared error:  4.0618 
+Out-of-bag estimate of root mean squared error:  4.0892 
 
 > 
 > library("mlbench")
@@ -191,7 +191,7 @@ Bagging regression trees with 25 bootstrap replications
 
 Call: bagging.data.frame(formula = y ~ ., data = learn, coob = TRUE)
 
-Out-of-bag estimate of root mean squared error:  2.8532 
+Out-of-bag estimate of root mean squared error:  2.8923 
 
 > 
 > # Survival data
@@ -213,7 +213,7 @@ Call: bagging.data.frame(formula = Surv(time, cens) ~ MGEc.1 + MGEc.2 +
     MGEc.3 + MGEc.4 + MGEc.5 + MGEc.6 + MGEc.7 + MGEc.8 + MGEc.9 + 
     MGEc.10 + IPI, data = DLBCL, coob = TRUE)
 
-Out-of-bag estimate of Brier's score:  0.2098 
+Out-of-bag estimate of Brier's score:  0.1887 
 
 > 
 > 
@@ -337,7 +337,7 @@ errorest.data.frame(formula = Type ~ ., data = Glass, model = lda,
 
 	 10-fold cross-validation estimator of misclassification error 
 
-Misclassification error:  0.3785 
+Misclassification error:  0.3692 
 
 > 
 > # force predict to return class labels
@@ -357,7 +357,7 @@ errorest.data.frame(formula = Type ~ ., data = Glass, model = pruneit,
 
 	 10-fold cross-validation estimator of misclassification error 
 
-Misclassification error:  0.3178 
+Misclassification error:  0.3271 
 
 > 
 > # compute sensitivity and specifity for stabilised LDA
@@ -370,12 +370,12 @@ Misclassification error:  0.3178
 > # sensitivity 
 > 
 > mean(error$predictions[GlaucomaM$Class == "glaucoma"] == "glaucoma")
-[1] 0.8163265
+[1] 0.7959184
 > 
 > # specifity
 > 
 > mean(error$predictions[GlaucomaM$Class == "normal"] == "normal")
-[1] 0.8367347
+[1] 0.8265306
 > 
 > # Indirect Classification: Smoking data
 > 
@@ -448,13 +448,6 @@ Root mean squared error:  5.877
 > 
 > data("GBSG2", package = "TH.data")
 > library("survival")
-
-Attaching package: ‘survival’
-
-The following object is masked from ‘package:rpart’:
-
-    solder
-
 > 
 > # prediction is fitted Kaplan-Meier
 > predict.survfit <- function(object, newdata) object
@@ -469,7 +462,7 @@ errorest.data.frame(formula = Surv(time, cens) ~ 1, data = GBSG2,
 
 	 5-fold cross-validation estimator of Brier's score
 
-Brier's score:  0.1927 
+Brier's score:  0.1936 
 
 > 
 > 
@@ -587,7 +580,7 @@ errorest.data.frame(formula = classes ~ ., data = learn, model = ipredknn,
 
 	 10-fold cross-validation estimator of misclassification error 
 
-Misclassification error:  0.0533 
+Misclassification error:  0.0367 
 
 > 
 > 
@@ -619,10 +612,10 @@ detaching ‘package:mlbench’
 > ## Don't show: 
 > k <- sample(5:15, 1)
 > k
-[1] 7
+[1] 13
 > N <- sample(50:150, 1)
 > N
-[1] 87
+[1] 117
 > stopifnot(sum(kfoldcv(k, N)) == N)
 > ## End(Don't show)
 > 
@@ -652,7 +645,7 @@ detaching ‘package:mlbench’
 > # out-of-bag estimate
 > 
 > mean(predict(mod) != Ionosphere$Class)
-[1] 0.07977208
+[1] 0.09401709
 > 
 > # predictions for the first 10 observations
 > 
@@ -663,9 +656,9 @@ Levels: bad good
 > predict(mod, newdata=Ionosphere[1:10,], type="prob")
        bad good
  [1,] 0.00 1.00
- [2,] 1.00 0.00
+ [2,] 0.76 0.24
  [3,] 0.00 1.00
- [4,] 0.64 0.36
+ [4,] 0.84 0.16
  [5,] 0.00 1.00
  [6,] 1.00 0.00
  [7,] 0.00 1.00
@@ -704,12 +697,12 @@ Levels: bad good
 > 
 > RES <- inbagg(y~w1+w2+w3~x1+x2+x3, data = DATA, pFUN = pFUN)
 > predict(RES, newdata = X)
-  [1] 1 1 2 2 1 2 2 2 2 1 1 1 2 1 2 1 2 2 1 2 2 1 2 1 1 1 1 1 2 1 1 2 1 1 2 2 2
- [38] 1 2 1 2 2 2 2 2 2 1 1 2 2 1 2 1 1 1 1 1 2 2 1 2 1 1 1 2 1 1 2 1 2 1 2 1 1
- [75] 1 2 2 1 2 2 1 2 1 1 2 1 2 1 1 1 1 1 2 2 2 2 1 1 2 2 1 1 2 2 1 2 2 2 2 1 1
-[112] 1 2 1 2 1 2 2 1 2 2 1 2 1 1 1 1 1 2 1 1 2 1 1 2 2 2 1 2 1 2 2 2 2 2 2 1 1
-[149] 2 2 1 2 1 1 1 1 1 2 2 1 2 1 1 1 2 1 1 2 1 2 1 2 1 1 1 2 2 1 2 2 1 2 1 1 2
-[186] 1 2 1 1 1 1 1 2 2 2 2 1 1 2 2
+  [1] 1 2 1 1 2 1 1 1 2 2 1 1 1 1 1 2 2 2 2 1 1 1 1 1 1 1 2 1 1 2 2 2 1 2 1 1 2
+ [38] 1 2 2 2 2 1 2 2 2 2 2 2 1 2 1 2 2 1 1 2 2 2 1 1 2 2 2 2 2 2 1 2 2 2 2 1 1
+ [75] 1 2 2 1 1 2 2 2 1 1 1 2 1 2 1 2 1 1 2 2 1 1 1 2 2 1 1 2 1 1 2 1 1 1 2 2 1
+[112] 1 1 1 2 2 2 2 2 1 1 1 1 1 1 1 2 1 1 2 2 2 1 2 1 1 2 2 2 2 2 2 1 2 2 2 2 2
+[149] 1 1 2 1 2 2 1 1 2 2 2 1 1 2 2 2 2 2 2 1 2 2 2 2 1 1 1 2 2 1 1 2 2 2 1 1 1
+[186] 2 1 2 1 2 1 1 2 2 1 1 1 2 2 1
 Levels: 1 2
 > 
 > 
@@ -861,7 +854,7 @@ Bagging classification trees with 10 bootstrap replications
 Call: bagging.data.frame(formula = Type ~ ., data = Glass, nbagg = 10, 
     coob = TRUE)
 
-Out-of-bag estimate of misclassification error:  0.285 
+Out-of-bag estimate of misclassification error:  0.3271 
 
 > 
 > 
@@ -1147,9 +1140,9 @@ detaching ‘package:survival’
 > mslda <- slda(classes ~ ., data=learn)
 > 
 > print(mean(predict(mlda, newdata=test)$class != test$classes))
-[1] 0.047
+[1] 0.054
 > print(mean(predict(mslda, newdata=test)$class != test$classes))
-[1] 0.025
+[1] 0.024
 > 
 > 
 > 
@@ -1186,7 +1179,7 @@ detaching ‘package:MASS’, ‘package:mlbench’
 > cleanEx()
 > options(digits = 7L)
 > base::cat("Time elapsed: ", proc.time() - base::get("ptime", pos = 'CheckExEnv'),"\n")
-Time elapsed:  4.108 0.069 4.176 0 0 
+Time elapsed:  7.344 0.164 7.512 0 0 
 > grDevices::dev.off()
 null device 
           1 
