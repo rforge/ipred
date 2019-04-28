@@ -138,7 +138,7 @@ inbagg.data.frame <- function(formula, data, pFUN=NULL,
     w.names <- attr(terms(as.formula(formula[[2]]), data = data), "term.labels")
     x.names <- attr(terms(as.formula(formula), data = data), "term.labels")
 
-    if(length(x.names == 1) && x.names == ".") x.names <- colnames(data)[!(colnames(data) %in% c(response, w.names))]
+    if((length(x.names) == 1) && x.names == ".") x.names <- colnames(data)[!(colnames(data) %in% c(response, w.names))]
     y <- data[, response]
     X <- data[, x.names]
     W <- data[, w.names]
